@@ -1,0 +1,68 @@
+<div style="margin-top: 200px" *ngIf="loader">
+  <app-loader></app-loader>
+</div>
+<div class="row" *ngIf="!loader">
+  <div class="col-lg-5 wp-left-content">
+    <div class="wp-content-container">
+      <p class="wp-header">Weather Forecast</p>
+      <p class="wp-header">Prism!</p>
+      <div>
+        <p class="wp-subheader">
+          We are the weather forecast system. <br />
+          We are a weather forecasting system. Our experts check the information
+          with the most modern satellite equipment and powerful servers. And
+          they will give you the most accurate results
+        </p>
+      </div>
+      <button class="btn btn-light btn-lg wp-get-started-button">
+        Get Started <img src="../../assets/images/cloudy.png" alt="" />
+      </button>
+    </div>
+  </div>
+  <div class="col-lg-7 wp-right-content">
+    <div class="wp-region-container">
+      <div class="wp-region-name">
+        <i class="fa-solid fa-location-dot"></i> {{ weather?.region }}
+      </div>
+    </div>
+    <div class="wp-temprature-card-container">
+      <div class="wp-temprature-container">
+        <span class="wp-temperature-text">{{ weather?.temperature }}</span>
+        <span class="wp-degree">o</span>
+      </div>
+      <div>
+        <img
+          class="wp-clouds-img"
+          src="../../assets/images/clearSky.png"
+          alt=""
+          height="200"
+          width="200"
+        />
+      </div>
+      <div class="wp-weather-text">{{ weather?.weatherCondition }}</div>
+      <div class="wp-full-report row">
+        <div class="wp-single-report col-xs-5 wp-right-border">
+          <span
+            ><i class="fa-solid fa-snowflake fa-xs" style="color: #ffffff"></i>
+            Precipitation</span
+          >
+          <span>{{ weather?.precipitation }}%</span>
+        </div>
+        <div class="wp-single-report col-xs-4 wp-right-border">
+          <span
+            ><i class="fa-solid fa-droplet fa-xs" style="color: #ffffff"></i>
+            Humidity</span
+          >
+          <span>{{ weather?.humidity }}%</span>
+        </div>
+        <div class="wp-single-report col-xs-3">
+          <span
+            ><i class="fa-solid fa-wind fa-sm" style="color: #ffffff"></i>
+            Wind</span
+          >
+          <span>{{ weather?.wind }}km/h</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

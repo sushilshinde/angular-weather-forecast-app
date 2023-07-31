@@ -1,0 +1,146 @@
+.wp-header {
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 65px;
+}
+
+.wp-content-container {
+  margin-top: 8rem;
+}
+
+.wp-left-content {
+  padding-left: 37px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.wp-subheader {
+  margin-top: 5rem;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.wp-right-content {
+  background: #5737d8;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+  height: 90vh;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.wp-region-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 40px;
+  margin-top: 10px;
+}
+
+.wp-region-name {
+  min-width: 70px;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.533);
+  width: fit-content;
+  border-radius: 7px;
+  box-shadow: 10px 5px 5px #30188e;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wp-temprature-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 8rem;
+}
+
+.wp-temprature-container {
+  display: flex;
+  align-items: flex-start;
+  height: 90px;
+}
+
+.wp-temperature-text {
+  color: white;
+  font-size: 100px;
+  line-height: 90px;
+}
+
+.wp-degree {
+  font-size: 10px;
+  color: white;
+}
+
+.wp-clouds-img {
+  margin-top: -70px;
+}
+
+.wp-weather-text {
+  font-size: 40px;
+  color: white;
+  font-weight: 500;
+}
+
+.wp-full-report {
+  width: 350px;
+  height: 30px;
+  border-top: 0.5px solid white;
+  margin-top: 4rem;
+}
+
+.wp-single-report {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  color: white;
+  font-size: 12px;
+  margin-top: 1rem;
+}
+
+.wp-right-border {
+  border-right: 0.5px solid white;
+}
+
+.wp-get-started-button {
+  box-shadow: 10px 5px 5px #403f45;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 160px;
+  border: 2px solid black;
+}
+
+@media (max-width: 1200px) {
+  .wp-left-content {
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+  .wp-right-content {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .wp-content-container {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .wp-temprature-card-container {
+    width: 100%;
+  }
+
+  .wp-full-report {
+    width: 100%;
+  }
+}
