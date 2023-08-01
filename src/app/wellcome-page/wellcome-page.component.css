@@ -1,3 +1,6 @@
+.wellcome-page-container{
+  height: 92vh;
+}
 .wp-header {
   font-size: 60px;
   font-weight: 900;
@@ -14,6 +17,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  height: 100%;
 }
 
 .wp-subheader {
@@ -24,11 +28,11 @@
 
 .wp-right-content {
   background: #5737d8;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 30px;
-  height: 90vh;
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
 }
 

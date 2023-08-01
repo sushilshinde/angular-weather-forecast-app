@@ -1,7 +1,7 @@
 <div style="margin-top: 200px" *ngIf="loader">
   <app-loader></app-loader>
 </div>
-<div class="row" *ngIf="!loader">
+<div class="row wellcome-page-container" *ngIf="!loader">
   <div class="col-lg-5 wp-left-content">
     <div class="wp-content-container">
       <p class="wp-header">Weather Forecast</p>
@@ -14,7 +14,7 @@
           they will give you the most accurate results
         </p>
       </div>
-      <button class="btn btn-light btn-lg wp-get-started-button">
+      <button class="btn btn-light btn-lg wp-get-started-button" [routerLink]="['/weather-forecast']">
         Get Started <img src="../../assets/images/cloudy.png" alt="" />
       </button>
     </div>

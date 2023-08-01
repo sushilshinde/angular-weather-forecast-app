@@ -1,0 +1,12 @@
+.weather-forcaste--container {
+  height: 92vh;
+  width: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.height-full {
+  height: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+}

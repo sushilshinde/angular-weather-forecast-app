@@ -3,19 +3,23 @@
   background: transparent;
 }
 
-.navbar-brand{
-    color: black;
-    font-weight: 900;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.navbar-brand {
+  color: black;
+  font-weight: 900;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navbar-brand img{
-    margin-right: 5px;
+.navbar-brand img {
+  margin-right: 5px;
 }
 
-.navbar-nav li a{
-    color: black;
+.navbar-nav li a {
+  color: black;
+}
+
+.navbar {
+  margin-bottom: 0 !important;
 }
