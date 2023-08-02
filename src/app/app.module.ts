@@ -9,6 +9,8 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { AppRoutingModule } from './app-routing.module';
 import { LoaderComponent } from './CommonComponent/loader/loader.component';
 import { DetailedViewPageComponent } from './weather-forecast-page/detailed-view/detailed-view-page/detailed-view-page.component';
+import { SearchComponent } from './search/search.component';
+import { WeatherOverviewComponent } from './weather-overview/weather-overview.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { DetailedViewPageComponent } from './weather-forecast-page/detailed-view
     NavigationBarComponent,
     LoaderComponent,
     DetailedViewPageComponent,
+    SearchComponent,
+    WeatherOverviewComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [],
