@@ -13,6 +13,8 @@ import { NgChartsModule } from 'ng2-charts';
 import { LineChartComponent } from './weather-forecast-page/weather-details/line-chart/line-chart.component';
 import { WeatherDetailsComponent } from './weather-forecast-page/weather-details/weather-details/weather-details.component';
 import { SunRiseSetComponentComponent } from './weather-forecast-page/detailed-view/sun-rise-set-component/sun-rise-set-component.component';
+import { SearchComponent } from './search/search.component';
+import { WeatherOverviewComponent } from './weather-overview/weather-overview.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,15 @@ import { SunRiseSetComponentComponent } from './weather-forecast-page/detailed-v
     LineChartComponent,
     WeatherDetailsComponent,
     SunRiseSetComponentComponent,
+    SearchComponent,
+    WeatherOverviewComponent,
   ],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, NgChartsModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    NgChartsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
