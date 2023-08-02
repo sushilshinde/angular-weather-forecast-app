@@ -9,6 +9,10 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { AppRoutingModule } from './app-routing.module';
 import { LoaderComponent } from './CommonComponent/loader/loader.component';
 import { DetailedViewPageComponent } from './weather-forecast-page/detailed-view/detailed-view-page/detailed-view-page.component';
+import { NgChartsModule } from 'ng2-charts';
+import { LineChartComponent } from './weather-forecast-page/weather-details/line-chart/line-chart.component';
+import { WeatherDetailsComponent } from './weather-forecast-page/weather-details/weather-details/weather-details.component';
+import { SunRiseSetComponentComponent } from './weather-forecast-page/detailed-view/sun-rise-set-component/sun-rise-set-component.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +22,11 @@ import { DetailedViewPageComponent } from './weather-forecast-page/detailed-view
     NavigationBarComponent,
     LoaderComponent,
     DetailedViewPageComponent,
+    LineChartComponent,
+    WeatherDetailsComponent,
+    SunRiseSetComponentComponent,
   ],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
+  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, NgChartsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
