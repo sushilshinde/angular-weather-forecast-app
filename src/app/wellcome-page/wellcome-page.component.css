@@ -1,3 +1,13 @@
+.wellcome-page-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+:host(app-wellcome-page) {
+  display: contents;
+}
 .wp-header {
   font-size: 60px;
   font-weight: 900;
@@ -10,10 +20,13 @@
 
 .wp-left-content {
   padding-left: 37px;
+  width: 45%;
+  min-width: 450px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  height: 100%;
 }
 
 .wp-subheader {
@@ -24,11 +37,13 @@
 
 .wp-right-content {
   background: #5737d8;
+  width: 55%;
+  min-width: 500px;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 30px;
-  height: 90vh;
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -120,13 +135,15 @@
   border: 2px solid black;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1020px) {
   .wp-left-content {
     margin-bottom: 2rem;
     align-items: center;
+    width: 100%;
   }
   .wp-right-content {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    width: 100%;
   }
 
   .wp-content-container {

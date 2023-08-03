@@ -11,7 +11,7 @@ import { Weather } from '../weather.modal';
 export class WellcomePageComponent implements OnInit, OnDestroy {
   weather: Weather;
   loader: Boolean = true;
-  constructor(private weatherServive: WeatherApiService) {}
+  constructor(private weatherServive: WeatherApiService, ) {}
 
   ngOnInit() {
     this.loader = true;

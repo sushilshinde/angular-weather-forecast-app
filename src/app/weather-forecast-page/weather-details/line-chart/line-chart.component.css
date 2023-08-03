@@ -1,0 +1,16 @@
+.chart-component--container {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.cc-header {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 26px;
+  color: rgba(18, 43, 77, 1);
+  margin-bottom: 20px;
+}
+
+.cc-chart--container {
+  width: 100%;
+}
