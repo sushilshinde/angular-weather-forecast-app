@@ -1,14 +1,14 @@
-<div class="app-container">
-  <div class="col-sm-5 year-container">
-    <h1 class="month-and-year">
+<div class="wd-header-container">
+  <div class="year-container">
+    <p class="month-and-year">
       {{currentMonth}} {{ currentYear }}
       <br />
       <span class="full-date">
         {{ currentDateAndYear }}
       </span>
-    </h1>
+    </p>
   </div>
-  <div class="col-sm-7 search-container">
+  <div class="search-container">
     <form>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,4 @@
       />
     </form>
   </div>
-
-  <hr class="line" />
-  <app-weather-overview></app-weather-overview>
 </div>
