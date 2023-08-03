@@ -1,13 +1,33 @@
 .weather-forcaste--container {
-  height: 92vh;
+  height: 100%;
+  min-height: 100%;
   width: 100%;
-  padding: 0 !important;
-  margin: 0 !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.wfc--left-conatiner {
+  width: 72%;
+  min-width: 300px;
+}
+.wfc--right-conatiner {
+  width: 28%;
+  min-width: 250px;
 }
 
 .height-full {
   height: 100%;
+  min-height: 100%;
   padding: 0 !important;
   margin: 0 !important;
 }
 
+@media (max-width: 1200px) {
+  .wfc--left-conatiner {
+    width: 100%;
+  }
+  .wfc--right-conatiner {
+    width: 100%;
+  }
+}

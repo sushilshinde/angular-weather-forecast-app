@@ -13,8 +13,9 @@ import { NgChartsModule } from 'ng2-charts';
 import { LineChartComponent } from './weather-forecast-page/weather-details/line-chart/line-chart.component';
 import { WeatherDetailsComponent } from './weather-forecast-page/weather-details/weather-details/weather-details.component';
 import { SunRiseSetComponentComponent } from './weather-forecast-page/detailed-view/sun-rise-set-component/sun-rise-set-component.component';
-import { SearchComponent } from './search/search.component';
-import { WeatherOverviewComponent } from './weather-overview/weather-overview.component';
+import { SearchComponent } from './weather-forecast-page/weather-details/search/search.component';
+import { WeatherOverviewComponent } from './weather-forecast-page/weather-details/weather-overview/weather-overview.component';
+import { WeatherDetailsCardComponent } from './weather-forecast-page/weather-details/weather-overview/weather-details-card/weather-details-card.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { WeatherOverviewComponent } from './weather-overview/weather-overview.co
     SunRiseSetComponentComponent,
     SearchComponent,
     WeatherOverviewComponent,
+    WeatherDetailsCardComponent,
   ],
   imports: [
     BrowserModule,

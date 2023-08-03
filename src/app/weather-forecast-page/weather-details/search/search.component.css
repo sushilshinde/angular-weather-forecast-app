@@ -1,0 +1,46 @@
+.wd-header-container {
+  display: flex;
+  padding: 15px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.year-container,
+.search-container {
+  margin: 0;
+  padding: 0;
+}
+
+.month-and-year {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 26px;
+  color: rgba(18, 43, 77, 1);
+  margin-bottom: 0;
+}
+
+.full-date {
+  color: rgba(18, 43, 77, 1);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+}
+
+.search-icon {
+  position: absolute;
+  margin: 12px;
+}
+
+.search-bar {
+  height: 40px;
+  padding-left: 32px;
+  width: 250px;
+  border-radius: 16px;
+}
+
+.line {
+  width: 100%;
+}
