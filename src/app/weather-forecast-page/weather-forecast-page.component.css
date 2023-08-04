@@ -8,6 +8,12 @@
 }
 
 .wfc--left-conatiner {
+  width: 70%;
+  min-width: 780px;
+}
+.wfc--right-conatiner {
+  width: 30%;
+  min-width: 334px;
   width: 72%;
   min-width: 300px;
 }
@@ -23,7 +29,7 @@
   margin: 0 !important;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1150px) {
   .wfc--left-conatiner {
     width: 100%;
   }

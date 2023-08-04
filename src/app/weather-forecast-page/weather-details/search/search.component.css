@@ -5,6 +5,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid rgba(18, 43, 77, 1);
+  margin-bottom: 20px;
 }
 
 .year-container,

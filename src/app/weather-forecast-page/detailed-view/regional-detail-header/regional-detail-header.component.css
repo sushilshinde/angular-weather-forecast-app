@@ -1,0 +1,59 @@
+.redional-detail-header--container{
+    width: 100%;
+    max-height: 250px;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.rdh-weather--container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    margin-top: 10px;
+}
+
+.rdh-region--container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rdh-region-text{
+    font-size: 22px;
+    line-height: 25px;
+    font-weight: 500;
+    color: rgb(213, 218, 237);
+}
+
+.rdh-state-country-text{
+    font-size: 14px;
+    line-height: 16px;
+    color: rgb(213, 218, 237);
+}
+
+.rdh-time-text{
+    font-size: 19px;
+    line-height: 22px;
+    color: rgb(213, 218, 237);
+    font-weight: 400;
+}
+
+.rdh-temp-text{
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 55px;
+    color: rgb(213, 218, 237);
+}
+
+.rdh-temp-value-text{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: rgb(213, 218, 237);
+}

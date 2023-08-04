@@ -1,6 +1,7 @@
 .navbar-default {
   border: none;
   background: transparent;
+  padding-right: 30px;
 }
 
 .navbar-brand {

@@ -1,5 +1,11 @@
 .sun-rise-set--container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-height: 310px;
+  margin-top: 20px;
 }
 
 .srss--header {

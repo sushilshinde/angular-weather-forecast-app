@@ -1,5 +1,12 @@
-.wellcome-page-container{
-  height: 92vh;
+.wellcome-page-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+:host(app-wellcome-page) {
+  display: contents;
 }
 .wp-header {
   font-size: 60px;
@@ -13,6 +20,8 @@
 
 .wp-left-content {
   padding-left: 37px;
+  width: 45%;
+  min-width: 450px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,6 +37,8 @@
 
 .wp-right-content {
   background: #5737d8;
+  width: 55%;
+  min-width: 500px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -124,13 +135,15 @@
   border: 2px solid black;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1020px) {
   .wp-left-content {
     margin-bottom: 2rem;
     align-items: center;
+    width: 100%;
   }
   .wp-right-content {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    width: 100%;
   }
 
   .wp-content-container {

@@ -16,6 +16,18 @@ import { SunRiseSetComponentComponent } from './weather-forecast-page/detailed-v
 import { SearchComponent } from './weather-forecast-page/weather-details/search/search.component';
 import { WeatherOverviewComponent } from './weather-forecast-page/weather-details/weather-overview/weather-overview.component';
 import { WeatherDetailsCardComponent } from './weather-forecast-page/weather-details/weather-overview/weather-details-card/weather-details-card.component';
+import { RegionalDetailHeaderComponent } from './weather-forecast-page/detailed-view/regional-detail-header/regional-detail-header.component';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { IntervalForecastComponent } from './weather-forecast-page/detailed-view/interval-forecast/interval-forecast.component';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { ProgressBarComponent } from './weather-forecast-page/detailed-view/interval-forecast/progress-bar/progress-bar.component';
+
+registerLocaleData(en);
 
 @NgModule({
   declarations: [
@@ -31,14 +43,22 @@ import { WeatherDetailsCardComponent } from './weather-forecast-page/weather-det
     SearchComponent,
     WeatherOverviewComponent,
     WeatherDetailsCardComponent,
+    RegionalDetailHeaderComponent,
+    IntervalForecastComponent,
+    ProgressBarComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     NgChartsModule,
+    FormsModule,
+    HttpClientModule,
+    NzProgressModule
   ],
-  providers: [],
+  providers: [
+    { provide: NZ_I18N, useValue: en_US }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

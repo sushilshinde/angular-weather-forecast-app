@@ -1,0 +1,12 @@
+<div class="if-content">
+  <span class="if-hour--text">{{ hour }}h</span>
+  <div class="progress-bar-container">
+    <nz-progress
+      [nzPercent]="percentAge"
+      [nzShowInfo]="false"
+      [nzStrokeColor]="{ '0%': '#8CB1FC', '100%': '#8CB1FC' }"
+      [nzStrokeWidth]="20"
+    ></nz-progress>
+  </div>
+  <span class="if-value--text">{{ percentAge }}%</span>
+</div>
