@@ -69,6 +69,10 @@
   align-items: center;
 }
 
+.fa-location-dot{
+  margin-right: 10px;
+}
+
 .wp-temprature-card-container {
   display: flex;
   justify-content: center;
@@ -140,8 +144,11 @@
     margin-bottom: 2rem;
     align-items: center;
     width: 100%;
+    min-width: 100%;
+    padding-left: 0px;
   }
   .wp-right-content {
+    min-width: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     width: 100%;
   }
