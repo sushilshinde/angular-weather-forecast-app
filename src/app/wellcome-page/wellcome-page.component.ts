@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { WeatherApiService } from '../weather-api.service';
 import { Subscription } from 'rxjs';
-import { Weather } from '../weather.modal';
 
 @Component({
   selector: 'app-wellcome-page',
@@ -9,17 +8,24 @@ import { Weather } from '../weather.modal';
   styleUrls: ['./wellcome-page.component.css'],
 })
 export class WellcomePageComponent implements OnInit, OnDestroy {
-  weather: Weather;
-  loader: Boolean = true;
-  constructor(private weatherServive: WeatherApiService, ) {}
+  weather: any;
+  loader: Boolean = false;
+  subscription: Subscription;
+  constructor(private weatherService: WeatherApiService) {
+    this.weatherService.setWeather('bangalore');
 
-  ngOnInit() {
-    this.loader = true;
-    setTimeout(() => {
-      this.weather = this.weatherServive.fetchWeather('India');
-      this.loader = false;
-    }, 2000);
   }
 
-  ngOnDestroy(): void {}
+  ngOnInit() {
+    this.subscription = this.weatherService.weatherChanged.subscribe(
+      (weather: any) => {
+        this.weather = weather;
+      }
+    );
+    this.weather = this.weatherService.getWeather();
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }

@@ -26,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IntervalForecastComponent } from './weather-forecast-page/detailed-view/interval-forecast/interval-forecast.component';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { ProgressBarComponent } from './weather-forecast-page/detailed-view/interval-forecast/progress-bar/progress-bar.component';
+import { IntervalChartForecastComponent } from './weather-forecast-page/detailed-view/interval-chart-forecast/interval-chart-forecast.component';
 
 registerLocaleData(en);
 
@@ -46,6 +47,7 @@ registerLocaleData(en);
     RegionalDetailHeaderComponent,
     IntervalForecastComponent,
     ProgressBarComponent,
+    IntervalChartForecastComponent,
   ],
   imports: [
     BrowserModule,

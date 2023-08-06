@@ -1,16 +1,18 @@
-<div class="redional-detail-header--container">
+<div class="redional-detail-header--container" *ngIf="weather?.city">
   <div class="rdh-region--container">
     <div>
-      <p class="rdh-region-text">Kolkata</p>
-      <p class="rdh-state-country-text">West Bengal, India</p>
+      <p class="rdh-region-text">{{ weather?.city }}</p>
+      <p class="rdh-state-country-text">
+        {{ weather?.state }}, {{ weather?.country }}
+      </p>
     </div>
     <p class="rdh-time-text">{{ currentTime }}</p>
   </div>
   <div class="rdh-weather--container">
     <div>
       <p><i class="fa-solid fa-cloud fa-2xl" style="color: #ffffff"></i></p>
-      <p class="rdh-temp-text">20° C</p>
+      <p class="rdh-temp-text">{{ weather?.temperature }}° C</p>
     </div>
-    <p class="rdh-temp-value-text">Partly cloudy</p>
+    <p class="rdh-temp-value-text">{{ weather?.weatherStatus }}</p>
   </div>
 </div>

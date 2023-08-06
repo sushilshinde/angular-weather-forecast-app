@@ -1,23 +1,31 @@
 <h1 class="overview-heading">Today Overview</h1>
-<div class="overview-container">
-  <app-weather-details-card
-    [valueText]="'Wind Speed'"
-    [iconName]="'fa-wind'"
-    [weatherValue]="'12km/hr'"
-  ></app-weather-details-card>
+<div class="overview-container" *ngIf="weather?.city">
   <app-weather-details-card
     [valueText]="'Rain Chance'"
     [iconName]="'fa-droplet'"
-    [weatherValue]="'24%'"
-  ></app-weather-details-card>
-  <app-weather-details-card
-    [valueText]="'Pressure'"
-    [iconName]="'fa-indent'"
-    [weatherValue]="'720hpa'"
+    [weatherValue]="weather?.rainChance + '%'"
+    (click)="onClickDetailedReport('rain')"
+    [ngClass]="{'active': clickedWeather == 'rain'}"
   ></app-weather-details-card>
   <app-weather-details-card
     [valueText]="'Temperature'"
     [iconName]="'fa-temperature-three-quarters'"
-    [weatherValue]="'30°C'"
+    [weatherValue]="weather?.temperature + '°C'"
+    (click)="onClickDetailedReport('temperature')"
+    [ngClass]="{'active': clickedWeather == 'temperature'}"
+  ></app-weather-details-card>
+  <app-weather-details-card
+    [valueText]="'Wind Speed'"
+    [iconName]="'fa-wind'"
+    [weatherValue]="weather?.wind + ' km/h'"
+    (click)="onClickDetailedReport('wind')"
+    [ngClass]="{'active': clickedWeather == 'wind'}"
+  ></app-weather-details-card>
+  <app-weather-details-card
+    [valueText]="'Precipitation'"
+    [iconName]="'fa-snowflake'"
+    [weatherValue]="weather?.precipitation + '%'"
+    (click)="onClickDetailedReport('precipitation')"
+    [ngClass]="{'active': clickedWeather == 'precipitation'}"
   ></app-weather-details-card>
 </div>
