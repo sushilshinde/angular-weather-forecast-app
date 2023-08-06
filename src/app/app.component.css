@@ -5,3 +5,9 @@
   flex-direction: column;
   padding-left: 20px;
 }
+
+@media (max-width: 1150px) {
+  .main-app-container {
+    padding-left: 0px;
+  }
+}
