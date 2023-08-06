@@ -14,7 +14,10 @@
           they will give you the most accurate results
         </p>
       </div>
-      <button class="btn btn-light btn-lg wp-get-started-button" [routerLink]="['/weather-forecast']">
+      <button
+        class="btn btn-light btn-lg wp-get-started-button"
+        [routerLink]="['/weather-forecast']"
+      >
         Get Started <img src="../../assets/images/cloudy.png" alt="" />
       </button>
     </div>
@@ -22,13 +25,14 @@
   <div class="wp-right-content">
     <div class="wp-region-container">
       <div class="wp-region-name">
-        <i class="fa-solid fa-location-dot"></i> {{ weather?.region }}
+        <i class="fa-solid fa-location-dot"></i> {{ weather?.city }}
       </div>
     </div>
     <div class="wp-temprature-card-container">
       <div class="wp-temprature-container">
         <span class="wp-temperature-text">{{ weather?.temperature }}</span>
         <span class="wp-degree">o</span>
+        <span class="wp-temperature-text"> C</span>
       </div>
       <div>
         <img

@@ -1,0 +1,21 @@
+.interval-chart-forecast--container {
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 5px;
+  }
+
+  .icf--header {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    color: rgb(213, 218, 237);
+  }
+
+  .cc-chart--container {
+    width: 100%;
+  }
+  

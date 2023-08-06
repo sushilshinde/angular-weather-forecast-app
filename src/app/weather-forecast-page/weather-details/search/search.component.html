@@ -1,7 +1,7 @@
 <div class="wd-header-container">
   <div class="year-container">
     <p class="month-and-year">
-      {{currentMonth}} {{ currentYear }}
+      {{ currentMonth }} {{ currentYear }}
       <br />
       <span class="full-date">
         {{ currentDateAndYear }}
@@ -9,7 +9,7 @@
     </p>
   </div>
   <div class="search-container">
-    <form>
+    <form (ngSubmit)="onSubmit()" #cityForm="ngForm">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="1em"
@@ -23,7 +23,10 @@
       <input
         class="search-bar form-control"
         type="text"
-        placeholder="Search location here"
+        placeholder="Enter city!"
+        ngModel
+        name="city"
+        required
       />
     </form>
   </div>

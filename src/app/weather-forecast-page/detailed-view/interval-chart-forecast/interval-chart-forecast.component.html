@@ -1,8 +1,8 @@
-<div class="chart-component--container" *ngIf="lineChartData.labels.length > 0">
-  <p class="cc-header">Average week temperature.</p>
+<div class="interval-chart-forecast--container">
+  <p class="icf--header">{{ title }} Hourly Forecast</p>
   <div class="cc-chart--container">
     <canvas
-      height="100"
+      height="150"
       baseChart
       type="line"
       [data]="lineChartData"

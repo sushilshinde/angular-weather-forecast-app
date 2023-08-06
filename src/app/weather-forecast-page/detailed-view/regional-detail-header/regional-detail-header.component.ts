@@ -1,12 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { WeatherApiService } from 'src/app/weather-api.service';
 
 @Component({
   selector: 'regional-detail-header',
   templateUrl: './regional-detail-header.component.html',
   styleUrls: ['./regional-detail-header.component.css'],
 })
-export class RegionalDetailHeaderComponent implements OnInit {
+export class RegionalDetailHeaderComponent implements OnInit, OnDestroy {
   currentTime: string;
+  weather: any;
+  subscription: Subscription;
+
+  constructor(private weatherService: WeatherApiService) {}
+
+  ngOnInit(): void {
+    this.subscription = this.weatherService.weatherChanged.subscribe(
+      (weather: any) => {
+        this.weather = weather;
+      }
+    );
+    this.weather = this.weatherService.getWeather();
+    let tempDt = new Date();
+    let strDt = tempDt.getHours() + ':' + tempDt.getHours();
+    this.currentTime = this.tConvert(strDt);
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   tConvert(time) {
     // Check correct time format and split into components
@@ -23,9 +45,4 @@ export class RegionalDetailHeaderComponent implements OnInit {
     return time.join(''); // return adjusted time or original string
   }
 
-  ngOnInit(): void {
-    let tempDt = new Date();
-    let strDt = tempDt.getHours() + ':' + tempDt.getHours();
-    this.currentTime = this.tConvert(strDt);
-  }
 }

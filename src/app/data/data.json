@@ -1,0 +1,222 @@
+[
+  {
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "country": "India",
+    "weatherStatus": "Sunny",
+    "temperature": 30,
+    "humidity": 12,
+    "wind": 14,
+    "precipitation": 13,
+    "rainChance": 11,
+    "rainChanceHourly": [
+      { "6h": 50 },
+      { "12h": 37 },
+      { "18h": 46 },
+      { "24h": 68 }
+    ],
+    "windSpeedHourly": [
+      { "6h": 30 },
+      { "12h": 10 },
+      { "18h": 20 },
+      { "24h": 15 }
+    ],
+    "temperatureHourly": [
+      { "6h": 25 },
+      { "12h": 32 },
+      { "18h": 20 },
+      { "24h": 18 }
+    ],
+    "precipitationHourly": [
+      { "6h": 12 },
+      { "12h": 5 },
+      { "18h": 7 },
+      { "24h": 19 }
+    ],
+    "temperatureWeekly": [
+      { "Mon": 30 },
+      { "Tue": 35 },
+      { "wed": 18 },
+      { "Thu": 20 },
+      { "Fri": 31 },
+      { "Sat": 20 },
+      { "Sun": 35 }
+    ]
+  },
+  {
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "country": "India",
+    "weatherStatus": "Rainy",
+    "temperature": 35,
+    "humidity": 8,
+    "wind": 35,
+    "precipitation": 6,
+    "rainChance": 20,
+    "rainChanceHourly": [
+      { "6h": 90 },
+      { "12h": 100 },
+      { "18h": 100 },
+      { "24h": 60 }
+    ],
+    "windSpeedHourly": [
+      { "6h": 30 },
+      { "12h": 35 },
+      { "18h": 40 },
+      { "24h": 20 }
+    ],
+    "temperatureHourly": [
+      { "6h": 30 },
+      { "12h": 20 },
+      { "18h": 29 },
+      { "24h": 19 }
+    ],
+    "precipitationHourly": [
+      { "6h": 12 },
+      { "12h": 4 },
+      { "18h": 6 },
+      { "24h": 19 }
+    ],
+    "temperatureWeekly": [
+      { "Mon": 37 },
+      { "Tue": 31 },
+      { "wed": 12 },
+      { "Thu": 29 },
+      { "Fri": 31 },
+      { "Sat": 21 },
+      { "Sun": 35 }
+    ]
+  },
+  {
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "country": "India",
+    "weatherStatus": "Sunny",
+    "temperature": 25,
+    "humidity": 12,
+    "wind": 26,
+    "precipitation": 8,
+    "rainChance": 30,
+    "rainChanceHourly": [
+      { "6h": 30 },
+      { "12h": 50 },
+      { "18h": 80 },
+      { "24h": 100 }
+    ],
+    "windSpeedHourly": [
+      { "6h": 30 },
+      { "12h": 40 },
+      { "18h": 20 },
+      { "24h": 45 }
+    ],
+    "temperatureHourly": [
+      { "6h": 25 },
+      { "12h": 20 },
+      { "18h": 18 },
+      { "24h": 16 }
+    ],
+    "precipitationHourly": [
+      { "6h": 11 },
+      { "12h": 5 },
+      { "18h": 7 },
+      { "24h": 10 }
+    ],
+    "temperatureWeekly": [
+      { "Mon": 30 },
+      { "Tue": 25 },
+      { "wed": 18 },
+      { "Thu": 35 },
+      { "Fri": 39 },
+      { "Sat": 22 },
+      { "Sun": 35 }
+    ]
+  },
+  {
+    "city": "Visakhapatnam",
+    "state": "Andhra Pradesh",
+    "country": "India",
+    "weatherStatus": "Sunny",
+    "temperature": 20,
+    "humidity": 15,
+    "wind": 34,
+    "precipitation": 8,
+    "rainChance": 40,
+    "rainChanceHourly": [
+      { "6h": 40 },
+      { "12h": 35 },
+      { "18h": 60 },
+      { "24h": 90 }
+    ],
+    "windSpeedHourly": [
+      { "6h": 15 },
+      { "12h": 31 },
+      { "18h": 30 },
+      { "24h": 20 }
+    ],
+    "temperatureHourly": [
+      { "6h": 25 },
+      { "12h": 31 },
+      { "18h": 26 },
+      { "24h": 26 }
+    ],
+    "precipitationHourly": [
+      { "6h": 11 },
+      { "12h": 5 },
+      { "18h": 7 },
+      { "24h": 10 }
+    ],
+    "temperatureWeekly": [
+      { "Mon": 31 },
+      { "Tue": 35 },
+      { "wed": 17 },
+      { "Thu": 22 },
+      { "Fri": 39 },
+      { "Sat": 22 },
+      { "Sun": 30 }
+    ]
+  },
+  {
+    "city": "Pune",
+    "state": "Maharashtra",
+    "country": "India",
+    "weatherStatus": "Rainy",
+    "temperature": 30,
+    "humidity": 10,
+    "wind": 10,
+    "precipitation": 10,
+    "rainChance": 10,
+    "rainChanceHourly": [
+      { "6h": 50 },
+      { "12h": 30 },
+      { "18h": 40 },
+      { "24h": 80 }
+    ],
+    "windSpeedHourly": [
+      { "6h": 10 },
+      { "12h": 30 },
+      { "18h": 20 },
+      { "24h": 15 }
+    ],
+    "temperatureHourly": [
+      { "6h": 20 },
+      { "12h": 30 },
+      { "18h": 25 },
+      { "24h": 23 }
+    ],
+    "precipitationHourly": [
+      { "6h": 10 },
+      { "12h": 3 },
+      { "18h": 3 },
+      { "24h": 12 }
+    ],
+    "temperatureWeekly": [
+      { "Mon": 30 },
+      { "Tue": 32 },
+      { "wed": 18 },
+      { "Thu": 25 },
+      { "Fri": 33 },
+      { "Sat": 25 },
+      { "Sun": 31 }
+    ]
+  }
+]
