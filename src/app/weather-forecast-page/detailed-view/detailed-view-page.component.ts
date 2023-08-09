@@ -3,7 +3,7 @@ import { WeatherApiService } from 'src/app/weather-api.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-detailed-view-page',
+  selector: 'detailed-view-page',
   templateUrl: './detailed-view-page.component.html',
   styleUrls: ['./detailed-view-page.component.css']
 })

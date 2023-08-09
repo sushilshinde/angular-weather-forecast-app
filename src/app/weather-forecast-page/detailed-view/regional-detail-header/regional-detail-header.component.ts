@@ -21,9 +21,21 @@ export class RegionalDetailHeaderComponent implements OnInit, OnDestroy {
       }
     );
     this.weather = this.weatherService.getWeather();
-    let tempDt = new Date();
-    let strDt = tempDt.getHours() + ':' + tempDt.getHours();
-    this.currentTime = this.tConvert(strDt);
+    const curDate = new Date(Date.now());
+
+    const formatedDate =
+      curDate.getMonth() +
+      1 +
+      ' ' +
+      curDate.getUTCDate() +
+      ' ' +
+      curDate.getFullYear() +
+      ' ' +
+      curDate.getHours() +
+      ':' +
+      curDate.getMinutes();
+
+    this.currentTime = new Date(formatedDate + ' UTC').toISOString();
   }
 
   ngOnDestroy(): void {
@@ -44,5 +56,4 @@ export class RegionalDetailHeaderComponent implements OnInit, OnDestroy {
     }
     return time.join(''); // return adjusted time or original string
   }
-
 }

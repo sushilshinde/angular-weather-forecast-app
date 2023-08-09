@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs';
 import { WeatherApiService } from 'src/app/weather-api.service';
 
 @Component({
-  selector: 'app-weather-overview',
+  selector: 'weather-overview-cards',
   templateUrl: './weather-overview.component.html',
   styleUrls: ['./weather-overview.component.css']
 })

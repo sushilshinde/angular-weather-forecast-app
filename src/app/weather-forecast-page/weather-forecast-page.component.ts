@@ -10,15 +10,20 @@ import { WeatherApiService } from '../weather-api.service';
 export class WeatherForecastPageComponent implements OnInit, OnDestroy {
   weather: any;
   subscription: Subscription;
+  loader: boolean = false;
 
   constructor(private weatherService: WeatherApiService) {
-    this.weatherService.setWeather('Bangalore');
+    if (!this.weather?.city) {
+      this.weatherService.setWeather();
+    }
   }
 
   ngOnInit(): void {
+    // this.loader = true;
     this.subscription = this.weatherService.weatherChanged.subscribe(
       (weather: any) => {
         this.weather = weather;
+        // this.loader = false;
       }
     );
     this.weather = this.weatherService.getWeather();

@@ -6,7 +6,7 @@
         {{ weather?.state }}, {{ weather?.country }}
       </p>
     </div>
-    <p class="rdh-time-text">{{ currentTime }}</p>
+    <p class="rdh-time-text">{{ currentTime | isoToAmPm }}</p>
   </div>
   <div class="rdh-weather--container">
     <div>
