@@ -3,22 +3,27 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(237, 237, 237);
-    width: 37.8vw;
+    width: 100%;
     padding-top: 15px;
     border-radius: 4px;
     cursor: pointer;
   }
-  @media screen and (min-width: 768px) {
+  :host(app-weather-details-card){
+    width: 40%;
+    min-width: 200px;
+  }
+
+  /* @media screen and (max-width: 768px) {
     .card-container {
       width: 44.7vw;
     }
   }
   
-  @media screen and (min-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     .card-container {
       width: 30vw;
     }
-  }
+  } */
   
   .icon {
     font-size: 18px;

@@ -12,8 +12,7 @@ export class WellcomePageComponent implements OnInit, OnDestroy {
   loader: Boolean = false;
   subscription: Subscription;
   constructor(private weatherService: WeatherApiService) {
-    this.weatherService.setWeather('bangalore');
-
+    this.weatherService.setWeather();
   }
 
   ngOnInit() {
@@ -21,8 +20,9 @@ export class WellcomePageComponent implements OnInit, OnDestroy {
       (weather: any) => {
         this.weather = weather;
       }
-    );
-    this.weather = this.weatherService.getWeather();
+      );
+      this.weather = this.weatherService.getWeather();
+
   }
 
   ngOnDestroy(): void {

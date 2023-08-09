@@ -76,4 +76,5 @@
 
 .active{
   border: 2px solid #122B4D;
+  border-radius: 4px;
 }
