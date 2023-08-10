@@ -29,6 +29,7 @@ import { ProgressBarComponent } from './weather-forecast-page/detailed-view/inte
 import { IntervalChartForecastComponent } from './weather-forecast-page/detailed-view/interval-chart-forecast/interval-chart-forecast.component';
 import { IsoToAmPmPipe } from './pipes/iso-to-am-pm.pipe';
 import { HoursAgoInPipe } from './pipes/hours-ago-in.pipe';
+import { AppenderPipe } from './pipes/appender.pipe';
 
 registerLocaleData(en);
 
@@ -52,6 +53,7 @@ registerLocaleData(en);
     IntervalChartForecastComponent,
     IsoToAmPmPipe,
     HoursAgoInPipe,
+    AppenderPipe,
   ],
   imports: [
     BrowserModule,

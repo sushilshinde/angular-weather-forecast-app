@@ -50,21 +50,21 @@
             ><i class="fa-solid fa-snowflake fa-xs" style="color: #ffffff"></i>
             Precipitation</span
           >
-          <span>{{ weather?.precipitation }}%</span>
+          <span>{{ weather?.precipitation | appender:'%' }}</span>
         </div>
         <div class="wp-single-report col-xs-4 wp-right-border">
           <span
             ><i class="fa-solid fa-droplet fa-xs" style="color: #ffffff"></i>
             Humidity</span
           >
-          <span>{{ weather?.humidity }}%</span>
+          <span>{{ weather?.humidity | appender:'%' }}</span>
         </div>
         <div class="wp-single-report col-xs-3">
           <span
             ><i class="fa-solid fa-wind fa-sm" style="color: #ffffff"></i>
             Wind</span
           >
-          <span>{{ weather?.wind }}km/h</span>
+          <span>{{ weather?.wind | appender:'km/h' }}</span>
         </div>
       </div>
     </div>

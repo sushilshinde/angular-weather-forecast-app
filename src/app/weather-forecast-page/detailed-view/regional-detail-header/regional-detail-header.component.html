@@ -11,7 +11,7 @@
   <div class="rdh-weather--container">
     <div>
       <p><i class="fa-solid fa-cloud fa-2xl" style="color: #ffffff"></i></p>
-      <p class="rdh-temp-text">{{ weather?.temperature }}° C</p>
+      <p class="rdh-temp-text">{{ weather?.temperature | appender:'°C' }}</p>
     </div>
     <p class="rdh-temp-value-text">{{ weather?.weatherStatus }}</p>
   </div>

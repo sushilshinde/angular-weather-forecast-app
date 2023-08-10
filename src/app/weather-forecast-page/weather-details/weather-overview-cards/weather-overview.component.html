@@ -3,28 +3,28 @@
   <app-weather-details-card
     [valueText]="'Rain Chance'"
     [iconName]="'fa-droplet'"
-    [weatherValue]="weather?.rainChance + '%'"
+    [weatherValue]="weather?.rainChance | appender:'%'"
     (click)="onClickDetailedReport('rain')"
     [ngClass]="{'active': clickedWeather == 'rain'}"
   ></app-weather-details-card>
   <app-weather-details-card
     [valueText]="'Temperature'"
     [iconName]="'fa-temperature-three-quarters'"
-    [weatherValue]="weather?.temperature + '°C'"
+    [weatherValue]="weather?.temperature | appender:'°C'"
     (click)="onClickDetailedReport('temperature')"
     [ngClass]="{'active': clickedWeather == 'temperature'}"
   ></app-weather-details-card>
   <app-weather-details-card
     [valueText]="'Wind Speed'"
     [iconName]="'fa-wind'"
-    [weatherValue]="weather?.wind + ' km/h'"
+    [weatherValue]="weather?.wind | appender:'km/h'"
     (click)="onClickDetailedReport('wind')"
     [ngClass]="{'active': clickedWeather == 'wind'}"
   ></app-weather-details-card>
   <app-weather-details-card
     [valueText]="'Precipitation'"
     [iconName]="'fa-snowflake'"
-    [weatherValue]="weather?.precipitation + '%'"
+    [weatherValue]="weather?.precipitation | appender:'%'"
     (click)="onClickDetailedReport('precipitation')"
     [ngClass]="{'active': clickedWeather == 'precipitation'}"
   ></app-weather-details-card>
