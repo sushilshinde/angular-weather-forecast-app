@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
 import { Subscription } from 'rxjs';
 import { WeatherApiService } from 'src/app/weather-api.service';
 
 @Component({
-  selector: 'app-line-chart',
+  selector: 'line-chart',
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.css'],
 })
@@ -12,6 +12,15 @@ export class LineChartComponent {
   subscription: Subscription;
   weaksDataArray: number[] = [];
   lineChartData: any;
+  @Input() borderColor: String;
+  @Input() backgroundColor: String;
+  @Input() pHBackgroundColor: String;
+  @Input() pHBorderColor: String;
+  @Input() pBorderColor: String;
+  @Input() pBackgroundColor: String;
+  @Input() yLabels: String[];
+  @Input() tooltipLabel: String;
+
 
   constructor(private weatherService: WeatherApiService) {}
 
@@ -19,22 +28,20 @@ export class LineChartComponent {
     this.subscription = this.weatherService.weeklytempChange.subscribe(
       (weaksDataArray: any) => {
         this.weaksDataArray = weaksDataArray;
-        console.log(weaksDataArray);
         this.lineChartData = {
-          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          labels: this.yLabels,
           datasets: [
             {
               data: this.weaksDataArray,
-              label: 'Temperature in °C',
+              label: this.tooltipLabel,
               fill: true,
-              backgroundColor: 'rgba(18, 43, 77, 0.5)',
-              borderColor: 'rgba(18, 43, 77, 1)',
+              backgroundColor: this.backgroundColor,
+              borderColor: this.borderColor,
               tension: 0.5,
-              // pointRadius: 0,
-              pointHoverBackgroundColor: 'rgba(18, 43, 77, 1)',
-              pointHoverBorderColor: '#fff',
-              pointBackgroundColor: 'rgba(18, 43, 77, 1)',
-              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: this.pHBackgroundColor,
+              pointHoverBorderColor: this.pHBorderColor,
+              pointBackgroundColor: this.pBackgroundColor,
+              pointBorderColor: this.pBorderColor,
             },
           ],
         };
@@ -43,20 +50,19 @@ export class LineChartComponent {
     );
     this.weaksDataArray = this.weatherService.getWeeklyTemp();
     this.lineChartData = {
-      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      labels: this.yLabels,
       datasets: [
         {
           data: this.weaksDataArray,
-          label: 'Temperature in °C',
+          label: this.tooltipLabel,
           fill: true,
-          backgroundColor: 'rgba(18, 43, 77, 0.5)',
-          borderColor: 'rgba(18, 43, 77, 1)',
+          backgroundColor: this.backgroundColor,
+          borderColor: this.borderColor,
           tension: 0.5,
-          // pointRadius: 0,
-          pointHoverBackgroundColor: 'rgba(18, 43, 77, 1)',
-          pointHoverBorderColor: '#fff',
-          pointBackgroundColor: 'rgba(18, 43, 77, 1)',
-          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: this.pHBackgroundColor,
+          pointHoverBorderColor: this.pHBorderColor,
+          pointBackgroundColor: this.pBackgroundColor,
+          pointBorderColor: this.pBorderColor,
         },
       ],
     };

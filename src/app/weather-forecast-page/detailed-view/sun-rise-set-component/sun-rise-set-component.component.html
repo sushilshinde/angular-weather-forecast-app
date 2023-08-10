@@ -6,11 +6,11 @@
         <img src="../../../../assets/images/sun.png" alt="Sunrise" />
         <div class="srss--content">
           <p class="srss-sun--text">Sunrise</p>
-          <p class="srss-sun--time">6:20 AM</p>
+          <p class="srss-sun--time">{{ sunriseTime | isoToAmPm }}</p>
         </div>
       </div>
       <div class="srss-right-content">
-        <p class="srss-sun--hours">4 Hours ago</p>
+        <p class="srss-sun--hours">{{sunriseTime | hoursAgoIn}}</p>
       </div>
     </div>
     <div class="sun-rise-set-card">
@@ -18,11 +18,11 @@
         <img src="../../../../assets/images/sunset-.png" alt="Sunset" />
         <div class="srss--content">
           <p class="srss-sun--text">Sunset</p>
-          <p class="srss-sun--time">6:48 PM</p>
+          <p class="srss-sun--time">{{ sunsetTime | isoToAmPm }}</p>
         </div>
       </div>
       <div class="srss-right-content">
-        <p class="srss-sun--hours">in 2 hours</p>
+        <p class="srss-sun--hours">{{sunsetTime | hoursAgoIn}}</p>
       </div>
     </div>
   </div>
