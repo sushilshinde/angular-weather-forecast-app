@@ -1,0 +1,13 @@
+.main-app-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+@media (max-width: 1150px) {
+  .main-app-container {
+    padding-left: 0px;
+  }
+}

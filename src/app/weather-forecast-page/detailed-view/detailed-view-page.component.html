@@ -1,0 +1,26 @@
+<div class="detailed-view-page--container">
+  <regional-detail-header></regional-detail-header>
+  <interval-chart-forecast
+    *ngIf="clickedWeather == 'wind'"
+    [title]="'Wind'"
+    [hourlyData]="wHourlyData"
+    [label]="'Wind in km/h'"
+  ></interval-chart-forecast>
+  <interval-chart-forecast
+    *ngIf="clickedWeather == 'precipitation'"
+    [hourlyData]="pHourlyData"
+    [title]="'Precipitation'"
+    [label]="'Precipitation in %'"
+  ></interval-chart-forecast>
+  <interval-chart-forecast
+    *ngIf="clickedWeather == 'temperature'"
+    [hourlyData]="tHourlyData"
+    [title]="'Temperature'"
+    [label]="'Temperature in °C'"
+  ></interval-chart-forecast>
+  <interval-forecast
+    *ngIf="clickedWeather == 'rain'"
+    [hourlyData]="rHourlyData"
+  ></interval-forecast>
+  <app-sun-rise-set-component></app-sun-rise-set-component>
+</div>

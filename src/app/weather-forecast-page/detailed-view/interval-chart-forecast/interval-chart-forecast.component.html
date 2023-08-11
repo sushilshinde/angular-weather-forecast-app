@@ -1,0 +1,14 @@
+<div class="interval-chart-forecast--container">
+  <p class="icf--header">{{ title }} Hourly Forecast</p>
+  <div class="cc-chart--container">
+    <canvas
+      height="150"
+      baseChart
+      type="line"
+      [data]="lineChartData"
+      [legend]="false"
+      [options]="lineChartOptions"
+    >
+    </canvas>
+  </div>
+</div>

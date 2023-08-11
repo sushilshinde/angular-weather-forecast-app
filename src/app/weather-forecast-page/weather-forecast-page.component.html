@@ -1,0 +1,11 @@
+<div style="margin-top: 200px" *ngIf="loader">
+  <app-loader></app-loader>
+</div>
+<div class="weather-forcaste--container" *ngIf="!loader">
+  <div class="wfc--left-conatiner">
+    <weather-details></weather-details>
+  </div>
+  <div class="wfc--right-conatiner">
+    <detailed-view-page></detailed-view-page>
+  </div>
+</div>

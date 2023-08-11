@@ -1,0 +1,29 @@
+<div class="sun-rise-set--container">
+  <p class="srss--header">Sunrise & Sunset</p>
+  <div class="srss-col-container">
+    <div class="sun-rise-set-card">
+      <div class="srss-left-content">
+        <img src="../../../../assets/images/sun.png" alt="Sunrise" />
+        <div class="srss--content">
+          <p class="srss-sun--text">Sunrise</p>
+          <p class="srss-sun--time">{{ sunriseTime | isoToAmPm }}</p>
+        </div>
+      </div>
+      <div class="srss-right-content">
+        <p class="srss-sun--hours">{{sunriseTime | hoursAgoIn}}</p>
+      </div>
+    </div>
+    <div class="sun-rise-set-card">
+      <div class="srss-left-content">
+        <img src="../../../../assets/images/sunset-.png" alt="Sunset" />
+        <div class="srss--content">
+          <p class="srss-sun--text">Sunset</p>
+          <p class="srss-sun--time">{{ sunsetTime | isoToAmPm }}</p>
+        </div>
+      </div>
+      <div class="srss-right-content">
+        <p class="srss-sun--hours">{{sunsetTime | hoursAgoIn}}</p>
+      </div>
+    </div>
+  </div>
+</div>

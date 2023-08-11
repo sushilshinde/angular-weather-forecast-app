@@ -1,0 +1,14 @@
+<div class="chart-component--container" *ngIf="lineChartData.labels.length > 0">
+  <p class="cc-header">Average week temperature.</p>
+  <div class="cc-chart--container">
+    <canvas
+      height="100"
+      baseChart
+      type="line"
+      [data]="lineChartData"
+      [legend]="false"
+      [options]="lineChartOptions"
+    >
+    </canvas>
+  </div>
+</div>

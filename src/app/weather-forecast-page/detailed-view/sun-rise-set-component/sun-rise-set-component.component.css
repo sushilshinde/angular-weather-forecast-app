@@ -1,0 +1,90 @@
+.sun-rise-set--container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-height: 310px;
+  margin-top: 20px;
+}
+
+.srss--header {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgb(213, 218, 237);
+}
+
+.srss-col-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.sun-rise-set-card {
+  width: 100%;
+  height: 80px;
+  border: 1px solid rgba(213, 218, 237, 0.5);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 13px;
+  background: rgba(213, 218, 237, 0.2);
+  padding: 0px 20px;
+}
+
+.sun-rise-set-card:hover {
+  border: 1px solid rgba(213, 218, 237, 1);
+  box-shadow: 7px 5px 5px rgb(213, 218, 237);
+}
+
+.srss-right-content {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.srss-left-content {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.srss--content {
+  height: 100%;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.srss-sun--hours {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 50px;
+  color: rgb(213, 218, 237);
+  margin: 0 !important;
+}
+
+.srss-sun--time {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 22px;
+  color: rgb(213, 218, 237);
+  margin: 0 !important;
+}
+
+.srss-sun--text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgb(213, 218, 237);
+  margin: 0 !important;
+}
