@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import weatherJson from './data/data.json';
 import citiesJson from './data/cities.json';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Region } from './models/region.modal';
 
@@ -36,7 +36,7 @@ export class WeatherApiService {
     return this.http.get<any>(this.url);
   }
 
-  setData(weather) {
+  setData(weather): Observable<void> {
     this.weatherChanged.next(weather);
 
     let data = weather?.precipitationHourly;
@@ -60,6 +60,8 @@ export class WeatherApiService {
     this.weeklytempChange.next(this.weeklytemp);
 
     this.setActiveWeatherReport('rain');
+
+    return new Observable<void>();
   }
 
   async setWeather(loacation?: String) {
@@ -125,11 +127,13 @@ export class WeatherApiService {
 
   formatData(data: any): number[] {
     const arr = [];
-    data.forEach((hour) => {
-      for (const key in hour) {
-        arr.push(hour[key]);
-      }
-    });
+    if (data) {
+      data.forEach((hour) => {
+        for (const key in hour) {
+          arr.push(hour[key]);
+        }
+      });
+    }
     return [...arr];
   }
 }

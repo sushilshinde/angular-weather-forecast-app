@@ -1,6 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { WeatherApiService } from '../weather-api.service';
+import { Store } from '@ngrx/store';
+import { WeatherState } from '../store/weather.reducer';
+import { WEATHER_DATA_REQUEST } from '../store/weather.actions';
 
 @Component({
   selector: 'app-weather-forecast-page',
@@ -12,21 +15,23 @@ export class WeatherForecastPageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   loader: boolean = false;
 
-  constructor(private weatherService: WeatherApiService) {
-    if (!this.weather?.city) {
-      this.weatherService.setWeather();
-    }
-  }
+  constructor(
+    private store: Store<{ weather: WeatherState }>,
+    private weatherService: WeatherApiService
+  ) {}
 
   ngOnInit(): void {
-    // this.loader = true;
     this.subscription = this.weatherService.weatherChanged.subscribe(
       (weather: any) => {
         this.weather = weather;
-        // this.loader = false;
       }
     );
+    if (!this.weather) {
+      this.weatherService.setWeather();
+    }
+
     this.weather = this.weatherService.getWeather();
+    this.store.dispatch(WEATHER_DATA_REQUEST({ weather: this.weather }));
   }
 
   ngOnDestroy(): void {
