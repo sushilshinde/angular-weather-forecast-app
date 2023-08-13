@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -30,6 +30,11 @@ import { IntervalChartForecastComponent } from './weather-forecast-page/detailed
 import { IsoToAmPmPipe } from './pipes/iso-to-am-pm.pipe';
 import { HoursAgoInPipe } from './pipes/hours-ago-in.pipe';
 import { AppenderPipe } from './pipes/appender.pipe';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { WeatherReducer } from './store/weather.reducer';
+import { WeatherEffects } from './store/weather.effects';
 
 registerLocaleData(en);
 
@@ -62,11 +67,14 @@ registerLocaleData(en);
     NgChartsModule,
     FormsModule,
     HttpClientModule,
-    NzProgressModule
+    NzProgressModule,
+    StoreModule.forRoot({
+      weather: WeatherReducer,
+    }),
+    EffectsModule.forRoot([WeatherEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: false, logOnly: !isDevMode() }),
   ],
-  providers: [
-    { provide: NZ_I18N, useValue: en_US }
-  ],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
