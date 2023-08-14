@@ -35,6 +35,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { WeatherReducer } from './store/weather.reducer';
 import { WeatherEffects } from './store/weather.effects';
+import { CardHoverDirective } from './dirctives/card-hover.directive';
 
 registerLocaleData(en);
 
@@ -59,6 +60,7 @@ registerLocaleData(en);
     IsoToAmPmPipe,
     HoursAgoInPipe,
     AppenderPipe,
+    CardHoverDirective,
   ],
   imports: [
     BrowserModule,

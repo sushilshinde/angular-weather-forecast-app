@@ -16,6 +16,7 @@ export class WeatherOverviewComponent implements OnInit, OnDestroy {
   constructor(private weatherService: WeatherApiService) {}
 
   ngOnInit(): void {
+    // subscribing to the weather changed and active weather report card
     this.subscription = this.weatherService.weatherChanged.subscribe(
       (weather: any) => {
         this.weather = weather;

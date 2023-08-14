@@ -23,6 +23,7 @@ export class DetailedViewPageComponent implements OnInit, OnDestroy {
   rHSub: Subscription;
 
   ngOnInit(): void {
+    // subscribing to all the hourly data of the rain, precipitation, wind and temperature
     this.clickedWeatherSubscription = this.weatherService.activeWeatherReportChanged.subscribe((str) => {
       this.clickedWeather = str;
     });

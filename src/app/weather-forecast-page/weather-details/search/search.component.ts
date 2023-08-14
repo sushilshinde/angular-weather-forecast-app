@@ -36,6 +36,7 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit() {
+    // calling setting weather of a city recieved in argument
     this.weatherService.setWeather(this.cityForm.value.city);
   }
 }

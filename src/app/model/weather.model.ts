@@ -1,3 +1,4 @@
+// Interface of Weather data format
 export interface WeatherData {
   city: string;
   state: string;
