@@ -3,7 +3,7 @@ import weatherJson from './data/data.json';
 import citiesJson from './data/cities.json';
 import { Subject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Region } from './models/region.modal';
+import { Region } from './model/region.modal';
 
 @Injectable({
   providedIn: 'root',

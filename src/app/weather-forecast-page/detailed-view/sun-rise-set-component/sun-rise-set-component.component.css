@@ -37,11 +37,6 @@
   padding: 0px 20px;
 }
 
-.sun-rise-set-card:hover {
-  border: 1px solid rgba(213, 218, 237, 1);
-  box-shadow: 7px 5px 5px rgb(213, 218, 237);
-}
-
 .srss-right-content {
   width: 40%;
   display: flex;

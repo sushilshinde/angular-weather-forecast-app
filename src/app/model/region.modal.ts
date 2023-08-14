@@ -1,3 +1,4 @@
+// Model class of region
 export class Region {
   public city: String;
   public region: String;

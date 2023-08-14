@@ -25,6 +25,7 @@ export class LineChartComponent {
   constructor(private weatherService: WeatherApiService) {}
 
   ngOnInit(): void {
+    // setting line chart Data
     this.subscription = this.weatherService.weeklytempChange.subscribe(
       (weaksDataArray: any) => {
         this.weaksDataArray = weaksDataArray;
@@ -68,6 +69,7 @@ export class LineChartComponent {
     };
   }
 
+  // Line chart options
   public lineChartOptions: ChartConfiguration['options'] = {
     responsive: true,
     elements: {
