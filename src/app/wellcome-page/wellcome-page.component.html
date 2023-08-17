@@ -1,7 +1,7 @@
-<div style="margin-top: 200px" *ngIf="loader">
+<div style="margin-top: 200px" *ngIf="!(weather$ | async)?.city">
   <app-loader></app-loader>
 </div>
-<div class="wellcome-page-container" *ngIf="!loader">
+<div class="wellcome-page-container" *ngIf="(weather$ | async)?.city">
   <div class="wp-left-content">
     <div class="wp-content-container">
       <p class="wp-header">Weather Forecast</p>
@@ -25,12 +25,12 @@
   <div class="wp-right-content">
     <div class="wp-region-container">
       <div class="wp-region-name">
-        <i class="fa-solid fa-location-dot"></i> {{ weather?.city }}
+        <i class="fa-solid fa-location-dot"></i> {{ (weather$ | async)?.city }}
       </div>
     </div>
     <div class="wp-temprature-card-container">
       <div class="wp-temprature-container">
-        <span class="wp-temperature-text">{{ weather?.temperature }}</span>
+        <span class="wp-temperature-text">{{ (weather$ | async)?.temperature }}</span>
         <span class="wp-degree">o</span>
         <span class="wp-temperature-text"> C</span>
       </div>
@@ -43,28 +43,28 @@
           width="200"
         />
       </div>
-      <div class="wp-weather-text">{{ weather?.weatherCondition }}</div>
+      <div class="wp-weather-text">{{ (weather$ | async)?.weatherCondition }}</div>
       <div class="wp-full-report row">
         <div class="wp-single-report col-xs-5 wp-right-border">
           <span
             ><i class="fa-solid fa-snowflake fa-xs" style="color: #ffffff"></i>
             Precipitation</span
           >
-          <span>{{ weather?.precipitation | appender:'%' }}</span>
+          <span>{{ (weather$ | async)?.precipitation | appender:'%' }}</span>
         </div>
         <div class="wp-single-report col-xs-4 wp-right-border">
           <span
             ><i class="fa-solid fa-droplet fa-xs" style="color: #ffffff"></i>
             Humidity</span
           >
-          <span>{{ weather?.humidity | appender:'%' }}</span>
+          <span>{{ (weather$ | async)?.humidity | appender:'%' }}</span>
         </div>
         <div class="wp-single-report col-xs-3">
           <span
             ><i class="fa-solid fa-wind fa-sm" style="color: #ffffff"></i>
             Wind</span
           >
-          <span>{{ weather?.wind | appender:'km/h' }}</span>
+          <span>{{ (weather$ | async)?.wind | appender:'km/h' }}</span>
         </div>
       </div>
     </div>

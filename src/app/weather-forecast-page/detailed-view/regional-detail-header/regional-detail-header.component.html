@@ -1,9 +1,9 @@
-<div class="redional-detail-header--container" *ngIf="weather?.city">
+<div class="redional-detail-header--container">
   <div class="rdh-region--container">
     <div>
-      <p class="rdh-region-text">{{ weather?.city }}</p>
+      <p class="rdh-region-text">{{ (weather$ | async)?.city }}</p>
       <p class="rdh-state-country-text">
-        {{ weather?.state }}, {{ weather?.country }}
+        {{ (weather$ | async)?.state }}, {{ (weather$ | async)?.country }}
       </p>
     </div>
     <p class="rdh-time-text">{{ currentTime | isoToAmPm }}</p>
@@ -11,8 +11,8 @@
   <div class="rdh-weather--container">
     <div>
       <p><i class="fa-solid fa-cloud fa-2xl" style="color: #ffffff"></i></p>
-      <p class="rdh-temp-text">{{ weather?.temperature | appender:'°C' }}</p>
+      <p class="rdh-temp-text">{{ (weather$ | async)?.temperature | appender:'°C' }}</p>
     </div>
-    <p class="rdh-temp-value-text">{{ weather?.weatherStatus }}</p>
+    <p class="rdh-temp-value-text">{{ (weather$ | async)?.weatherStatus }}</p>
   </div>
 </div>

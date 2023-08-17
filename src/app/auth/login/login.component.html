@@ -1,0 +1,50 @@
+<div class="login--container">
+  <span class="login--header">Login</span>
+  <form class="login--form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <span class="login--error">{{ errorMessage }}</span>
+    <div class="mb-3 margin-bottom">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        formControlName="email"
+        id="email"
+        class="form-control"
+      />
+      <div
+        *ngIf="loginForm.get('email').touched && !loginForm.get('email').valid"
+      >
+        <div *ngIf="loginForm.get('email').errors.required">
+          Email is required
+        </div>
+        <div *ngIf="loginForm.get('email').errors.email">Invalid Email</div>
+      </div>
+    </div>
+    <div class="mb-3 margin-bottom">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        formControlName="password"
+        id="password"
+        class="form-control"
+      />
+      <div
+        *ngIf="
+          loginForm.get('password').touched && !loginForm.get('password').valid
+        "
+      >
+        <div *ngIf="loginForm.get('password').errors.required">
+          Password is required
+        </div>
+      </div>
+    </div>
+    <div class="mb-3 margin-bottom">
+      <button
+        type="submit"
+        [disabled]="!loginForm.valid"
+        class="btn btn-primary"
+      >
+        Login
+      </button>
+    </div>
+  </form>
+</div>
