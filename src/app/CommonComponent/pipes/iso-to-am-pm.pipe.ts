@@ -3,6 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'isoToAmPm',
 })
+// Custom pipe to convert 24hrs format time recieved from argument to 12 hrs AM PM format
 export class IsoToAmPmPipe implements PipeTransform {
   transform(value: string, ...args: unknown[]): string {
     const date = new Date(value);    

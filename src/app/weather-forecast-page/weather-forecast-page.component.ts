@@ -1,35 +1,19 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { WeatherApiService } from '../weather-api.service';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { WeatherData } from '../model/weather.model';
 
 @Component({
   selector: 'app-weather-forecast-page',
   templateUrl: './weather-forecast-page.component.html',
   styleUrls: ['./weather-forecast-page.component.css'],
 })
-export class WeatherForecastPageComponent implements OnInit, OnDestroy {
-  weather: any;
-  subscription: Subscription;
-  loader: boolean = false;
+export class WeatherForecastPageComponent implements OnInit {
+  weather$: Observable<WeatherData>
 
-  constructor(private weatherService: WeatherApiService) {
-    if (!this.weather?.city) {
-      this.weatherService.setWeather();
-    }
-  }
+  constructor(private store: Store<{weather: WeatherData}>) {}
 
   ngOnInit(): void {
-    // this.loader = true;
-    this.subscription = this.weatherService.weatherChanged.subscribe(
-      (weather: any) => {
-        this.weather = weather;
-        // this.loader = false;
-      }
-    );
-    this.weather = this.weatherService.getWeather();
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+      this.weather$ = this.store.select('weather');
   }
 }

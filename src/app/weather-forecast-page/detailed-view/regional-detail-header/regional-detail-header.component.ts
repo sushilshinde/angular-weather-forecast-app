@@ -1,26 +1,23 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { WeatherApiService } from 'src/app/weather-api.service';
+import { Store } from '@ngrx/store';
+import { Observable, Subscription } from 'rxjs';
+import { WeatherData } from 'src/app/model/weather.model';
+import { WeatherApiService } from 'src/app/weather-services/weather-api.service';
 
 @Component({
   selector: 'regional-detail-header',
   templateUrl: './regional-detail-header.component.html',
   styleUrls: ['./regional-detail-header.component.css'],
 })
-export class RegionalDetailHeaderComponent implements OnInit, OnDestroy {
+export class RegionalDetailHeaderComponent implements OnInit {
   currentTime: string;
-  weather: any;
-  subscription: Subscription;
+  weather$: Observable<WeatherData>;
 
-  constructor(private weatherService: WeatherApiService) {}
+  constructor(private store: Store<{ weather: WeatherData }>) {}
 
   ngOnInit(): void {
-    this.subscription = this.weatherService.weatherChanged.subscribe(
-      (weather: any) => {
-        this.weather = weather;
-      }
-    );
-    this.weather = this.weatherService.getWeather();
+    this.weather$ = this.store.select('weather');
+
     const curDate = new Date(Date.now());
 
     const formatedDate =
@@ -36,10 +33,6 @@ export class RegionalDetailHeaderComponent implements OnInit, OnDestroy {
       curDate.getMinutes();
 
     this.currentTime = new Date(formatedDate + ' UTC').toISOString();
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 
   tConvert(time) {
