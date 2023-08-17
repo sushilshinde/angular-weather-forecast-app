@@ -1,7 +1,7 @@
-<div style="margin-top: 200px" *ngIf="loader">
+<div style="margin-top: 200px" *ngIf="!(weather$ | async)?.city">
   <app-loader></app-loader>
 </div>
-<div class="weather-forcaste--container" *ngIf="!loader">
+<div class="weather-forcaste--container" *ngIf="(weather$ | async)?.city">
   <div class="wfc--left-conatiner">
     <weather-details></weather-details>
   </div>

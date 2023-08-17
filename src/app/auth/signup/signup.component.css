@@ -1,0 +1,38 @@
+.signup--container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+:host(signup){
+    height: 100%;
+}
+
+.signup--form{
+    width: 50%;
+    padding: 0 20px;
+}
+
+.margin-bottom{
+    margin-bottom: 10px;
+}
+
+.signup--header{
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.signup--error{
+    color: red;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1000px) {
+    .signup--form{
+        width: 100%;
+    }
+}
