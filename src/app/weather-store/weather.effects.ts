@@ -24,7 +24,13 @@ export class WeatherEffects {
         api_key: this.api_key,
       },
     };
-    return this.http.get<Region>(this.url, options);
+
+    return this.http.get<Region>(this.url, options).pipe(
+      catchError((error) => {
+        console.error('Error fetching the location:', error);
+        throw error;
+      })
+    );
   }
 
   loadWeather$ = createEffect(() =>
@@ -34,9 +40,14 @@ export class WeatherEffects {
         this.fetchLocation().pipe(
           map((region) => {
             const { city } = region;
+            console.log(region);
+            console.log(setWeather({ location: city }));
             return setWeather({ location: city });
           }),
-          catchError(() => of(setWeather({ location: '' }))) // Handle errors gracefully
+          catchError((error) => {
+            console.error('Error fetching weather data:', error);
+            return of(setWeather({ location: 'City Not Found' }));
+          })
         )
       )
     )

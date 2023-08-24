@@ -1,5 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
-import { WeatherForecastPageComponent } from './weather-forecast-page.component';
+import { WeatherForecastPageComponent } from '../weather-forecast-page/weather-forecast-page.component';
 import { NgModule } from '@angular/core';
 import { DetailedViewPageComponent } from './detailed-view/detailed-view-page.component';
 import { NgChartsModule } from 'ng2-charts';
@@ -22,7 +22,13 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../CommonComponent/shared.module';
 import { AuthGuard } from '../auth/auth-guard.guard';
 
-const routes: Routes = [{ path: '', component: WeatherForecastPageComponent, canActivate: [AuthGuard] }];
+const routes: Routes = [
+  {
+    path: '',
+    component: WeatherForecastPageComponent,
+    canActivate: [AuthGuard],
+  },
+];
 
 @NgModule({
   declarations: [

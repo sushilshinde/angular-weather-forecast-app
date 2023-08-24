@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoaderComponent } from './loader.component';
 
-describe('LoaderComponent', () => {
+fdescribe('LoaderComponent', () => {
   let component: LoaderComponent;
   let fixture: ComponentFixture<LoaderComponent>;
 
@@ -17,5 +17,15 @@ describe('LoaderComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render the loader container', () => {
+    const loaderContainer = fixture.nativeElement.querySelector('.loader-container');
+    expect(loaderContainer).toBeTruthy();
+  });
+
+  it('should render the loader elements', () => {
+    const loaderElements = fixture.nativeElement.querySelectorAll('.lds-ring div');
+    expect(loaderElements.length).toBe(4);
   });
 });

@@ -8,6 +8,7 @@ import { initWeather } from './weather-store/weather.actions';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  title = '';
   constructor(private store: Store) {}
 
   ngOnInit(): void {

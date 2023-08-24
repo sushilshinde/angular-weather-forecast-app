@@ -10,6 +10,10 @@ import { WeatherData } from '../model/weather.model';
   styleUrls: ['./wellcome-page.component.css'],
 })
 export class WellcomePageComponent implements OnInit {
+  text: string = 'Weather Forecast';
+  belowText: string = 'Prism!';
+  description: string =
+    ' We are a weather forecasting system. Our experts check the information with the most modern satellite equipment and powerful servers. And they will give you the most accurate results';
   weather$: Observable<WeatherData>;
   loader: Boolean = false;
 
@@ -17,5 +21,6 @@ export class WellcomePageComponent implements OnInit {
 
   ngOnInit() {
     this.weather$ = this.store.select('weather');
+    console.log(this.weather$);
   }
 }

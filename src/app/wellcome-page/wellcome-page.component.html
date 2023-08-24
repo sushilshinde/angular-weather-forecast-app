@@ -4,14 +4,12 @@
 <div class="wellcome-page-container" *ngIf="(weather$ | async)?.city">
   <div class="wp-left-content">
     <div class="wp-content-container">
-      <p class="wp-header">Weather Forecast</p>
-      <p class="wp-header">Prism!</p>
+      <p class="wp-header">{{ text }}</p>
+      <p class="wp-header">{{ belowText }}</p>
       <div>
         <p class="wp-subheader">
           We are the weather forecast system. <br />
-          We are a weather forecasting system. Our experts check the information
-          with the most modern satellite equipment and powerful servers. And
-          they will give you the most accurate results
+         {{description}}
         </p>
       </div>
       <button

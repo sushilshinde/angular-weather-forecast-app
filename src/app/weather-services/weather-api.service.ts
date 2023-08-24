@@ -12,8 +12,13 @@ export class WeatherApiService {
   private activeWeatherReport: string = 'rain';
 
   setActiveWeatherReport(str: string) {
-    this.activeWeatherReport = str;
-    this.activeWeatherReportChanged.next(this.activeWeatherReport);
+    try {
+      this.activeWeatherReport = str;
+      this.activeWeatherReportChanged.next(this.activeWeatherReport);
+      console.log(this.activeWeatherReport);
+    } catch (error) {
+      console.log('Setting active weather report', error);
+    }
   }
   getActiveWeatherReport() {
     return this.activeWeatherReport;
