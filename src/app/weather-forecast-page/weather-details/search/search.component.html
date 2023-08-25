@@ -9,7 +9,7 @@
     </p>
   </div>
   <div class="search-container">
-    <form (ngSubmit)="onSubmit()" #cityForm="ngForm">
+    <form (ngSubmit)="onSubmit()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="1em"
@@ -24,7 +24,7 @@
         class="search-bar form-control"
         type="text"
         placeholder="Enter city!"
-        ngModel
+        [(ngModel)]="city"
         name="city"
         required
       />
