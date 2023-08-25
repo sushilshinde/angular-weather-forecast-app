@@ -21,6 +21,5 @@ export class WellcomePageComponent implements OnInit {
 
   ngOnInit() {
     this.weather$ = this.store.select('weather');
-    console.log(this.weather$);
   }
 }

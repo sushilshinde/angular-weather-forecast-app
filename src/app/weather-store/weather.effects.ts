@@ -1,11 +1,13 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, exhaustMap, map } from 'rxjs/operators';
+import { catchError, exhaustMap, map, switchMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { initWeather, setWeather } from './weather.actions';
+import { initWeather, setWeather, successWeather } from './weather.actions';
 import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
 import { Region } from '../model/region.modal';
+import { WeatherData } from '../model/weather.model';
+import { of } from 'rxjs';
+import { initialState } from './weather.state';
 
 @Injectable()
 export class WeatherEffects {
@@ -33,6 +35,37 @@ export class WeatherEffects {
     );
   }
 
+  fetchWeatherData(city: string) {
+    const weatherApiUrl = `http://localhost:3000/team-a/weather-details?city=${city}`;
+
+    return this.http.get<WeatherData>(weatherApiUrl).pipe(
+      catchError((error) => {
+        console.error('Error fetching weather data:', error);
+        throw error;
+      })
+    );
+  }
+
+  setWeather$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(setWeather),
+      switchMap((action) =>{
+        
+        return this.fetchWeatherData(action.location).pipe(
+          map((weatherData) => {
+            return successWeather({ weatherData });
+          }),
+          catchError((error) => {
+            console.error('Error fetching weather data:', error);
+            const errObj = {...initialState};
+            errObj.city = '';
+            return of(successWeather({weatherData: errObj}));
+          })
+        )}
+      )
+    )
+  );
+
   loadWeather$ = createEffect(() =>
     this.actions$.pipe(
       ofType(initWeather),
@@ -40,8 +73,6 @@ export class WeatherEffects {
         this.fetchLocation().pipe(
           map((region) => {
             const { city } = region;
-            console.log(region);
-            console.log(setWeather({ location: city }));
             return setWeather({ location: city });
           }),
           catchError((error) => {
