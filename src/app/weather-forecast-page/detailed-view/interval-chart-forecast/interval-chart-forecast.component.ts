@@ -7,6 +7,8 @@ import { ChartConfiguration } from 'chart.js';
   styleUrls: ['./interval-chart-forecast.component.css']
 })
 export class IntervalChartForecastComponent implements OnInit {
+
+  text: string = 'Hourly Forecast'
   @Input() title: String;
   @Input() label: String;
   @Input() hourlyData: number[];

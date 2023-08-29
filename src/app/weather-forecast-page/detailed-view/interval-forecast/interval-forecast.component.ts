@@ -6,5 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./interval-forecast.component.css']
 })
 export class IntervalForecastComponent {
+  text: string = 'Chances of Rain'
   @Input() hourlyData: number[];
 }

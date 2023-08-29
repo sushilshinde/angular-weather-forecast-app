@@ -30,14 +30,24 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="!(user$ | async)?.isLoggedIn">
-          <a style="cursor: pointer;" routerLink="auth/signup">Sign Up</a>
+        <li
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          *ngIf="!(user$ | async)?.isLoggedIn"
+        >
+          <a style="cursor: pointer" routerLink="auth/signup">Sign Up</a>
         </li>
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="!(user$ | async)?.isLoggedIn">
-          <a style="cursor: pointer;" routerLink="/auth/login">Log In</a>
+        <li
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          *ngIf="!(user$ | async)?.isLoggedIn"
+        >
+          <a style="cursor: pointer" routerLink="/auth/login">Log In</a>
         </li>
         <li *ngIf="(user$ | async)?.isLoggedIn">
-          <a style="cursor: pointer;" role="button" (click)="onLogout()">Log out</a>
+          <a style="cursor: pointer" role="button" (click)="onLogout()"
+            >Log out</a
+          >
         </li>
       </ul>
     </div>

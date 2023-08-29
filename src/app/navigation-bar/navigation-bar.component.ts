@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { UserData } from '../model/user.model';
 import { Router } from '@angular/router';
@@ -8,21 +8,23 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-navigation-bar',
   templateUrl: './navigation-bar.component.html',
-  styleUrls: ['./navigation-bar.component.css']
+  styleUrls: ['./navigation-bar.component.css'],
 })
-export class NavigationBarComponent implements OnInit{
+export class NavigationBarComponent implements OnInit {
   user$: Observable<UserData>;
   collapsed = true;
 
-  constructor(private store: Store<{ auth: UserData }>, private router: Router){}
+  constructor(
+    private store: Store<{ auth: UserData }>,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-      this.user$ = this.store.select('auth');
-      
+    this.user$ = this.store.select('auth');
   }
 
-  onLogout(){
+  onLogout() {
     this.store.dispatch(logout());
-    this.router.navigate(['/'])
+    this.router.navigate(['/']);
   }
 }

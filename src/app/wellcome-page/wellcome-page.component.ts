@@ -14,6 +14,8 @@ export class WellcomePageComponent implements OnInit {
   belowText: string = 'Prism!';
   description: string =
     ' We are a weather forecasting system. Our experts check the information with the most modern satellite equipment and powerful servers. And they will give you the most accurate results';
+  btnText: string = 'Get Started';
+
   weather$: Observable<WeatherData>;
   loader: Boolean = false;
 

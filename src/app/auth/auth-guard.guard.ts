@@ -9,7 +9,6 @@ import { UserData } from '../model/user.model';
 })
 export class AuthGuard implements CanActivate {
   private loginState: boolean = false;
-
   constructor(private store: Store<{ auth: UserData }>, private router: Router) {}
 
   canActivate(

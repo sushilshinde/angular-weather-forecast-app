@@ -10,6 +10,7 @@ import { WeatherApiService } from 'src/app/weather-services/weather-api.service'
   styleUrls: ['./weather-overview.component.css'],
 })
 export class WeatherOverviewComponent implements OnInit, OnDestroy {
+  text: string = 'Today Overview';
   weather$: Observable<WeatherData>;
   clickedWeather: any;
   clickedWeatherSubscription: Subscription;
@@ -33,7 +34,9 @@ export class WeatherOverviewComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.clickedWeatherSubscription.unsubscribe();
+    if (this.weather$) {
+      this.clickedWeatherSubscription.unsubscribe();
+    }
   }
 
   onClickDetailedReport(clickedItem: string) {

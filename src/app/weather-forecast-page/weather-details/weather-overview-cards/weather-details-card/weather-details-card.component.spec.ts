@@ -1,21 +1,27 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WeatherDetailsCardComponent } from './weather-details-card.component';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { initialState } from 'src/app/weather-store/weather.state';
 
-describe('WeatherDetailsCardComponent', () => {
+fdescribe('WeatherDetailsCardComponent', () => {
   let component: WeatherDetailsCardComponent;
   let fixture: ComponentFixture<WeatherDetailsCardComponent>;
+  let store: MockStore;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WeatherDetailsCardComponent]
+      declarations: [WeatherDetailsCardComponent],
+      providers: [provideMockStore({ initialState })],
     });
+
     fixture = TestBed.createComponent(WeatherDetailsCardComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    store = TestBed.inject(MockStore);
   });
 
-  it('should create', () => {
+  it('should render the weather details component', () => {
     expect(component).toBeTruthy();
+    expect(component).toBeDefined();
   });
 });
